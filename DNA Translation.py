@@ -12,7 +12,7 @@ Each codon corresponds to an amino acid, which makes the full protein.
 import random
 import numpy as np
 
-#testing
+#New_test
 
 #Declaration of certain constants
 codon_length = 3   #Length of a codon
