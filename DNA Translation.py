@@ -4,7 +4,7 @@ Created on Tue Jul 12 10:44:55 2016
 
 @author: AB Sanyal
 
-A DNA will consist of codons of length 3, made of the nitrogenous bases 0 and 1.
+DNA will consist of codons of length 3, made of the nitrogenous bases 0 and 1.
 Each codon corresponds to an amino acid, which makes the full protein.
 
 """
@@ -27,8 +27,10 @@ amino_acid = dict([("000", 0),
                    ("101", 5),
                    ("110", 6),
                    ("111", 7)])
-
-# Generate a random DNA, which is a sequence of 0's and 1's. The length should be a multiple of 3 in this case (but not necessarily).
+"""
+Generate a random DNA, which is a sequence of 0's and 1's.
+The length should be a multiple of 3 in this case (but not necessarily).
+"""
 
 
 def create_random_dna(length):
@@ -64,13 +66,12 @@ def show_DNA_seq(seq):
             p += "-"
         i += 1
     return p
-
-# Translate each three base block (codon) into an amino acid and form a sequence of amino acids
+# Translate each three base block (codon) into an amino acid
 
 
 def translate(dna_original):
     dna = dna_original[:]
-    # Trim the DNA so that excess parts are gone in case the number of bases is not a multiple of codon_length
+#    # Trim the DNA so that excess parts are gone
     excess_bases = len(dna) % codon_length
     i = 1
     while (i <= excess_bases):
@@ -115,7 +116,7 @@ def fitness(s, target):
     while(i < len(s)):
         k += abs(target[i] - s[i])
         i += 1
-    #k = np.sqrt(k)
+#    k = np.sqrt(k)
     return k
 
 
